@@ -1,5 +1,6 @@
 {
   "dependencies": {
-    "react-helmet": "^5.2.0"
+    "react-helmet": "^5.2.0",
+    "recompose": "^0.26.0"
   }
 }
