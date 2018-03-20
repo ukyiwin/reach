@@ -1,0 +1,9 @@
+header {
+	background: #aaa;
+}
+
+footer {
+	border-top: 1px solid #ccc;
+	margin-top: 15px;
+	background: #bbb;
+}
