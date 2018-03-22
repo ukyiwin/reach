@@ -1,6 +1,14 @@
 {
+  "scripts": {
+    "start": "umi dev",
+    "build": "BASE_URL=/reach/ umi build",
+    "deploy": "yarn build && gh-pages -d dist"
+  },
   "dependencies": {
     "react-helmet": "^5.2.0",
     "recompose": "^0.26.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^1.1.0"
   }
 }
