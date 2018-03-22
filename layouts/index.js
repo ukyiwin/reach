@@ -4,6 +4,7 @@ import { Helmet } from 'react-helmet'
 import logo from '../assets/hatching-chick.png'
 // import Music from '../components/Music'
 import styles from './index.less'
+
 const { SubMenu } = Menu
 const { Header, Content, Footer, Sider } = Layout
 
@@ -17,11 +18,13 @@ export default function (props) {
         </Helmet>
         <Row>
           <Col span={1}>
-            <Avatar src={logo} />
+            <Avatar src={logo} size="small" />
           </Col>
           <Col span={16}>
             <Divider orientation="left">
-              <div className={styles.slogan}>敬想法：从<span className={styles.keyword}>「得到」</span>到<span className={styles.keyword}>「达到」</span></div>
+              <div className={styles.slogan}>
+                敬想法：从<span className={styles.keyword}>「得到」</span>到<span className={styles.keyword}>「达到」</span>
+              </div>
             </Divider>
           </Col>
           <Col span={4} offset={3}>

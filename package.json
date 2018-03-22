@@ -5,10 +5,15 @@
     "deploy": "yarn build && gh-pages -d dist"
   },
   "dependencies": {
+    "dva": "^2.1.0",
+    "dva-loading": "^1.0.4",
+    "firebase": "^4.12.0",
     "react-helmet": "^5.2.0",
     "recompose": "^0.26.0"
   },
   "devDependencies": {
-    "gh-pages": "^1.1.0"
+    "gh-pages": "^1.1.0",
+    "umi-plugin-dva": "^0.3.4",
+    "umi-plugin-routes": "^0.1.1"
   }
 }
