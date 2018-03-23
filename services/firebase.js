@@ -1,4 +1,4 @@
-import * as firebase from 'firebase'
+import firebase from 'firebase'
 
 // Initialize Firebase
 const config = {
@@ -9,6 +9,7 @@ const config = {
   storageBucket: 'get2reach.appspot.com',
   messagingSenderId: '122122060316',
 }
-const app = firebase.initializeApp(config)
 
-export default app
+export const initFirebase = () => firebase.initializeApp(config)
+
+export default firebase

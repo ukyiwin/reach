@@ -10,18 +10,10 @@ const menus = [
 ]
 
 const data = [
-  {
-    title: 'Title 1',
-  },
-  {
-    title: 'Title 2',
-  },
-  {
-    title: 'Title 3',
-  },
-  {
-    title: 'Title 4',
-  },
+  { id: '123400000', title: '想法 Title 1', description: '每一个想法，都值得被「达到」。'},
+  { id: '123400000', title: '想法 Title 2', description: '每一个想法，都值得被「达到」。'},
+  { id: '123400000', title: '想法 Title 3', description: '每一个想法，都值得被「达到」。'},
+  { id: '123400000', title: '想法 Title 4', description: '每一个想法，都值得被「达到」。'},
 ]
 
 export default () => (
@@ -36,8 +28,8 @@ export default () => (
         <List.Item actions={menus.map(m => <Button><Link to={m.url}>{m.text}</Link></Button>)}>
           <List.Item.Meta
             avatar={<Avatar src="https://o7mw3gkkh.qnssl.com/blog/public/img/gavatar.jpg" />}
-            title={<a href="https://ant.design">{item.title}</a>}
-            description="每一个想法，都值得被「达到」。"
+            title={<Link to={`ideas/?idea=${item.id}`}>{item.title}</Link>}
+            description={item.description}
           />
         </List.Item>
       )}
