@@ -12,6 +12,7 @@
     "lodash": "^4.17.5",
     "react-firebaseui": "^1.1.9",
     "react-helmet": "^5.2.0",
+    "react-markdown": "^3.3.0",
     "recompose": "^0.26.0",
     "trim": "^0.0.1"
   },

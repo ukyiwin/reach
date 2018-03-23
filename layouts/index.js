@@ -2,6 +2,7 @@ import { Avatar, BackTop, Breadcrumb, Col, Divider, Icon, Layout, Menu, Rate, Ro
 import React, { Component } from 'react'
 import { StyledFirebaseAuth } from 'react-firebaseui'
 import Link from 'umi/link'
+import NewButton from '../components/NewButton'
 import firebase, { initFirebase } from '../services/firebase'
 import Header from './Header'
 import Sidebar from './Sidebar'
@@ -72,6 +73,7 @@ export default class Index extends Component {
           </Layout>
         </Content>
         <BackTop />
+        <NewButton />
         <Footer style={{ textAlign: 'center' }}>
           Reach ©2018 Created by JimmyLv.
         </Footer>
