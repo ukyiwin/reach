@@ -16,10 +16,12 @@ export default () => (
   <Sider width={200} style={{ background: '#fff' }}>
     <Menu
       mode="inline"
-      defaultSelectedKeys={['JimmyLv']}
+      defaultSelectedKeys={['/']}
       defaultOpenKeys={['sub1', 'sub2']}
       style={{ height: '100%' }}
     >
+      <Menu.Item key="/get"><Link to={`/get`}>最新想法</Link></Menu.Item>
+      <Menu.Item key="/"><Link to={`/`}>所有想法</Link></Menu.Item>
       <SubMenu key="sub1" title={<span><Icon type="solution" />积分榜</span>}>
         {rankings.map(r => <Menu.Item key={r.type}><Link to={`/rankings?type=${r.type}`}>{r.text}</Link></Menu.Item>)}
       </SubMenu>
