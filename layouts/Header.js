@@ -2,15 +2,23 @@ import { Avatar, BackTop, Breadcrumb, Col, Divider, Icon, Layout, Menu, Rate, Ro
 import { Helmet } from 'react-helmet'
 import { withState } from 'recompose'
 import Link from 'umi/link'
+import withRouter from 'umi/withRouter'
 import logo from '../assets/hatching-chick.png'
 // import Music from '../components/Music'
 import styles from './index.less'
 
-export default withState(
+const menus = [
+  { text: '得', url: '/ideas' },
+  { text: '能', url: '/practice' },
+  { text: '用', url: '/apply' },
+  { text: '达', url: '/reach' },
+]
+
+export default withRouter(withState(
   'isLightTheme',
   'updateTheme',
   true,
-)(function ({ isLightTheme, updateTheme }) {
+)(function ({ isLightTheme, updateTheme, location }) {
   return (
     <Layout.Header className="header" style={{ backgroundColor: `${isLightTheme ? '#fff' : '#011529'}` }}>
       <Helmet>
@@ -33,20 +41,12 @@ export default withState(
             theme={isLightTheme ? 'light' : 'dark'}
             mode="horizontal"
             defaultSelectedKeys={['1']}
+            selectedKeys={[location.pathname]}
             style={{ lineHeight: '64px' }}
           >
-            <Menu.Item key="1">
-              <Link to="/ideas">「得」</Link>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Link to="/practice">「能」</Link>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Link to="/apply">「用」</Link>
-            </Menu.Item>
-            <Menu.Item key="4">
-              <Link to="/reach">「达」</Link>
-            </Menu.Item>
+            {menus.map(m => <Menu.Item key={m.url}>
+              <Link to={m.url}>「{m.text}」</Link>
+            </Menu.Item>)}
           </Menu>
         </Col>
         <Col span={1}>
@@ -56,4 +56,4 @@ export default withState(
       </Row>
     </Layout.Header>
   )
-})
+}))
