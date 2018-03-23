@@ -8,7 +8,7 @@ import logo from '../assets/hatching-chick.png'
 import styles from './index.less'
 
 const menus = [
-  { text: '得', url: '/ideas' },
+  { text: '得', url: '/get' },
   { text: '能', url: '/practice' },
   { text: '用', url: '/apply' },
   { text: '达', url: '/reach' },
@@ -22,7 +22,7 @@ export default withRouter(withState(
   return (
     <Layout.Header className="header" style={{ backgroundColor: `${isLightTheme ? '#fff' : '#011529'}` }}>
       <Helmet>
-        <title>Reach: 从「得到」到「达到」</title>
+        <title>Reach: 跟优秀的人一起精进</title>
         <meta name="description" content="Helmet application" />
       </Helmet>
       <Row>

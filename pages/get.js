@@ -43,7 +43,7 @@ export default () => (
             style={{ width: 300 }}
             cover={<img alt={meta.title} src={meta.picture} />}
             actions={[<Icon type="heart" />, <Icon type="edit" />,
-              <Link to={`idea/${meta.id}`}><Icon type="ellipsis" /></Link>]}
+              <Link to={`ideas/${meta.id}`}><Icon type="ellipsis" /></Link>]}
           >
             <Meta
               avatar={<Avatar src={user.avatar} />}
