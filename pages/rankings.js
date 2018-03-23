@@ -55,7 +55,7 @@ export default withRouter(({ location }) => (
     dataSource={_.orderBy(
       dataSource.map((user => ({
         ...user,
-        words: user.content.length,
+        words: user.content.length*10.24,
       }))),
       MAPS[location.query.type],
       ['desc'],

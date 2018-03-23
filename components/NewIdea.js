@@ -86,7 +86,7 @@ export default class NewIdea extends Component {
         </Form.Item>}
         <Form.Item>
           <h4>
-            { type === 'get' ? '「以教为学」你想教给谁？' : '你想请教哪位老师获得反馈？'}
+            { ['get', 'edit'].includes(type) ? '「以教为学」你想教给谁？' : '你想请教哪位老师获得反馈？'}
           </h4>
           <Mention
             style={{ width: '100%' }}
