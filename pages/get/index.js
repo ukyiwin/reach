@@ -1,5 +1,6 @@
-import { Avatar, Card, Col, Icon, Row, Divider } from 'antd'
+import { Avatar, Card, Col, Divider, Icon, Row, Button } from 'antd'
 import Link from 'umi/link'
+import withRouter from 'umi/withRouter'
 
 const { Meta } = Card
 
@@ -32,7 +33,7 @@ const ideas = [
   },
 ]
 
-export default () => (
+export default withRouter(({ location }) => (
   <div>
     <h1>「得」：想法，是可以被规整的。</h1>
     <Row type="flex" justify="start">
@@ -42,18 +43,23 @@ export default () => (
             key={meta.id}
             style={{ width: 300 }}
             cover={<img alt={meta.title} src={meta.picture} />}
-            actions={[<Icon type="heart" />, <Icon type="edit" />,
-              <Link to={`ideas/${meta.id}`}><Icon type="ellipsis" /></Link>]}
+            actions={[
+              !location.pathname.includes('get') && <Button type="primary"><Icon type="bulb">得</Icon></Button>,
+              !location.pathname.includes('practise') && <Button type="primary"><Icon type="heart-o">能</Icon></Button>,
+              !location.pathname.includes('apply') && <Button type="primary"><Icon type="right-circle-o">用</Icon></Button>,
+              !location.pathname.includes('reach') && <Button type="primary"><Icon type="check-circle-o">达</Icon></Button>,
+              <Link to={`ideas/${meta.id}`}><Button><Icon type="ellipsis" /></Button></Link>,
+            ]}
           >
-            <Meta
+            <Link to={`ideas/${meta.id}`}><Meta
               avatar={<Avatar src={user.avatar} />}
               title={meta.title}
               description={meta.description}
-            />
+            /></Link>
           </Card>
           <Divider />
         </Col>,
       )}
     </Row>
   </div>
-)
+))
