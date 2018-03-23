@@ -1,4 +1,4 @@
-import { Avatar, BackTop, Breadcrumb, Col, Divider, Icon, Layout, Menu, Rate, Row, Switch } from 'antd'
+import { Avatar, BackTop, Input, Breadcrumb, Col, Divider, Icon, Layout, Menu, Rate, Row, Switch } from 'antd'
 import { Helmet } from 'react-helmet'
 import { withState } from 'recompose'
 import Link from 'umi/link'
@@ -9,7 +9,7 @@ import styles from './index.less'
 
 const menus = [
   { text: '得', url: '/get' },
-  { text: '能', url: '/practice' },
+  { text: '能', url: '/practise' },
   { text: '用', url: '/apply' },
   { text: '达', url: '/reach' },
 ]
@@ -27,16 +27,17 @@ export default withRouter(withState(
       </Helmet>
       <Row>
         <Col span={1}>
-          <Avatar src={logo} size="small" />
+          <Link to="/"><Avatar src={logo} size="small" /></Link>
         </Col>
-        <Col span={14}>
+        <Col span={10}>
           <Divider orientation="left">
             <div className={styles.slogan}>
               敬想法：从<span className={styles.keyword}>「得到」</span>到<span className={styles.keyword}>「达到」</span>
             </div>
           </Divider>
         </Col>
-        <Col span={6} offset={2}>
+        <Col span={4} offset={1}><Input placeholder="搜索想法…" /></Col>
+        <Col span={6} offset={1}>
           <Menu
             theme={isLightTheme ? 'light' : 'dark'}
             mode="horizontal"
