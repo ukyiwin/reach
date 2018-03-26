@@ -1,9 +1,10 @@
-import { Avatar, BackTop, Input, Breadcrumb, Col, Divider, Icon, Layout, Menu, Rate, Row, Switch } from 'antd'
+import { Avatar, BackTop, Breadcrumb, Col, Divider, Icon, Input, Layout, Menu, Rate, Row, Switch } from 'antd'
 import { Helmet } from 'react-helmet'
 import { withState } from 'recompose'
 import Link from 'umi/link'
 import withRouter from 'umi/withRouter'
 import logo from '../assets/hatching-chick.png'
+import Search from '../components/Search'
 // import Music from '../components/Music'
 import styles from './index.less'
 
@@ -36,7 +37,9 @@ export default withRouter(withState(
             </div>
           </Divider>
         </Col>
-        <Col span={4} offset={1}><Input placeholder="搜索想法…" /></Col>
+        <Col span={4} offset={1}>
+          <Search />
+        </Col>
         <Col span={6} offset={1}>
           <Menu
             theme={isLightTheme ? 'light' : 'dark'}
