@@ -1,4 +1,4 @@
-import { Button, Form, Input, Mention, Modal, Row } from 'antd'
+import { Button, Form, Input, Mention, Modal, Row, Col } from 'antd'
 import React, { Component } from 'react'
 import ReactMarkdown from 'react-markdown'
 import trim from 'trim'
@@ -81,19 +81,6 @@ export default class NewIdea extends Component {
           value={this.state.idea}>
           </TextArea>
         </Form.Item>
-        {type === 'practise' && <Form.Item>
-          <TodoList />
-        </Form.Item>}
-        <Form.Item>
-          <h4>
-            { ['get', 'edit'].includes(type) ? '「以教为学」你想教给谁？' : '你想请教哪位老师获得反馈？'}
-          </h4>
-          <Mention
-            style={{ width: '100%' }}
-            defaultValue={toContentState('@吕')}
-            suggestions={users}
-          />
-        </Form.Item>
         <Form.Item>
           <Row type="flex" justify="end">
             <Button>取消</Button>
@@ -107,6 +94,24 @@ export default class NewIdea extends Component {
           >
             <ReactMarkdown source={this.state.idea} />
           </Modal>
+        </Form.Item>
+        {type === 'practise' && <Form.Item>
+          <TodoList />
+        </Form.Item>}
+        <Form.Item>
+          <h4>
+            {['get', 'edit'].includes(type) ? '「以教为学」你想教给谁？' : '你想请教哪位老师获得反馈？'}
+          </h4>
+          <Row type="flex" justify="space-between">
+            <Col span={10}>
+              <Mention
+                style={{ width: '100%' }}
+                defaultValue={toContentState('@吕')}
+                suggestions={users}
+              />
+            </Col>
+            <Col span={2}><Button type="primary">提交</Button></Col>
+          </Row>
         </Form.Item>
       </Form>
     )
