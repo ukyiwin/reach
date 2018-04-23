@@ -1,6 +1,6 @@
 export default {
   plugins: [
-    'umi-plugin-dva',
+    // 'umi-plugin-dva',
     [
       'umi-plugin-routes',
       {
