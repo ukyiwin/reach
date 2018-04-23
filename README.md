@@ -1,5 +1,16 @@
 # Reach
 
+> AGILE & LEAN prod by @JimmyLv.
+
+## 开发流程
+
+- UX Design
+- -> MockService(API Design)
+-  -> Components Split
+-   -> Static Page/Layout
+-    -> State & Props(minimum)
+-     -> Dynamic Data Flow
+
 ## 产品理念与产品规划
 
 - [ ] v1 跟优秀的人一起精进
